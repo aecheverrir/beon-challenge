@@ -9,7 +9,6 @@ describe('Tests for a basic google search', () => {
         cy.get('@third_result').invoke('attr', 'href').as('href_value');
         cy.get('@third_result').click();
         cy.get('@href_value').then(href => {
-            
         });
     })
 })
