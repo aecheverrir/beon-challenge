@@ -1,14 +1,16 @@
 # Requirements
 - Node
+- Chrome Browser
 
 ## How to make it work 
-1. npm i
-2. npx cypress open
+1. ```npm install```
+2. ```npx cypress open```
 3. run the spec
 
 ## Cypress
-Test files are under cypress/e2e/search folder.
-Custome commands created are under cypress/support/commands.js
+Test files are under ```cypress/e2e/search``` folder.
+
+Custom commands created are under ```cypress/support/commands.js```
 
 ## Improvements that could be made (but out of scope for this challenge)
 - Using cypress fixtures to test a data set
