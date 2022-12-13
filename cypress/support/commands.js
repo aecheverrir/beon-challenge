@@ -26,4 +26,21 @@
 
 Cypress.Commands.add('googleSearch', (criteria) => { 
     cy.get('.gLFyf').click().type(criteria +'{enter}');
+    cy.url().should('include', 'search?q=');
+    cy.get('#result-stats').should('be.visible');
+})
+
+Cypress.Commands.add('googleSearchResultsSelectNthResult', (n) => { 
+    cy.get('#rso').children().eq(n-1).find('[data-header-feature="0"]').find('a').first()
+    .as('result')
+    .invoke('attr', 'href')
+    .then(href => {
+        cy.get('@result').click();
+        cy.origin(
+            href,
+            { args: href },
+            (href) => {
+            cy.url().should('include', href)
+        })
+    });
 })
